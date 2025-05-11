@@ -1,118 +1,66 @@
 {
   "keywords": {
     "common_words": [
-      "weather",
-      "today",
-      "news",
-      "latest",
-      "sports",
-      "games",
-      "movies",
-      "watch",
-      "music",
-      "listen",
-      "technology",
-      "new",
-      "health",
-      "food",
-      "diet",
-      "recipe",
-      "travel",
-      "vacation",
-      "finance",
-      "money",
-      "books",
-      "read",
-      "shopping",
-      "buy"
+      "weather", "today", "news", "latest", "sports", "games",
+      "movies", "watch", "music", "listen", "technology", "new",
+      "health", "food", "diet", "recipe", "travel", "vacation",
+      "finance", "money", "books", "read", "shopping", "buy",
+      "computer", "software", "internet", "online", "digital",
+      "science", "research", "education", "learning", "student",
+      "business", "company", "market", "product", "service",
+      "restaurant", "medicine", "hospital", "doctor", "treatment"
     ],
     "misspellings": {
-      "weather": [
-        "wether",
-        "wheather",
-        "whether",
-        "wethar"
-      ],
-      "technology": [
-        "technolgy",
-        "tecnology",
-        "technoligy"
-      ],
-      "health": [
-        "helth",
-        "healt",
-        "healht"
-      ],
-      "recipe": [
-        "recipie",
-        "recepie",
-        "receipe"
-      ],
-      "vacation": [
-        "vacatin",
-        "vaccation",
-        "vacasion"
-      ],
-      "finance": [
-        "finanse",
-        "finence",
-        "finace"
-      ],
-      "shopping": [
-        "shoping",
-        "shooping",
-        "shapping"
-      ]
+      "weather": ["wether", "wheather", "whether", "wethar", "weathr"],
+      "technology": ["tecnology", "technolgy", "tecnolgy", "technoligy", "tek"],
+      "health": ["helth", "healt", "healht", "healthh"],
+      "recipe": ["recipie", "recepie", "receipe", "recip"],
+      "vacation": ["vacatin", "vaccation", "vacasion", "vacashun"],
+      "finance": ["finanse", "finence", "finace", "finnance"],
+      "shopping": ["shoping", "shooping", "shapping", "shopin"],
+      "computer": ["compter", "computr", "computter", "komputer"],
+      "education": ["educasion", "eduction", "educaton", "edukation"],
+      "restaurant": ["restaurent", "restarant", "restorant", "restraunt"],
+      "medicine": ["medicin", "medecine", "medicene", "medisine"],
+      "business": ["busines", "bussiness", "bizness", "buisness"]
     },
     "phrases": [
-      "how to",
-      "what is",
-      "where to",
-      "when will",
-      "best way to",
-      "how can I",
-      "why does",
-      "top 10",
-      "near me",
-      "how do I"
+      "how to", "what is", "where to", "when will",
+      "best way to", "how can I", "why does",
+      "top 10", "near me", "how do I",
+      "latest news", "best price", "free download",
+      "step by step", "compare prices", "customer service",
+      "most popular", "getting started", "learn more about",
+      "similar to", "difference between", "advantages of"
     ],
     "categories": {
       "tech": [
-        "computer",
-        "laptop",
-        "phone",
-        "software",
-        "app",
-        "website"
+        "computer", "laptop", "phone", "software", "app", "website",
+        "programming", "database", "network", "security", "cloud"
       ],
-      "food": [
-        "restaurant",
-        "recipe",
-        "cooking",
-        "menu",
-        "delivery"
-      ],
-      "travel": [
-        "hotel",
-        "flight",
-        "booking",
-        "destination",
-        "tour"
+      "health": [
+        "medicine", "treatment", "symptom", "diagnosis", "therapy",
+        "doctor", "hospital", "clinic", "patient", "prescription"
       ],
       "education": [
-        "course",
-        "tutorial",
-        "learning",
-        "study",
-        "exam"
+        "school", "college", "university", "course", "degree",
+        "student", "teacher", "professor", "lecture", "exam"
+      ],
+      "business": [
+        "company", "market", "finance", "investment", "stock",
+        "management", "strategy", "startup", "revenue", "profit"
+      ],
+      "lifestyle": [
+        "food", "recipe", "restaurant", "travel", "vacation",
+        "shopping", "entertainment", "fitness", "fashion", "hobby"
       ]
     }
   },
   "metadata": {
-    "total_keywords": 24,
-    "total_misspellings": 19,
-    "total_phrases": 10,
-    "total_categories": 4,
+    "total_keywords": 44,
+    "total_misspellings": 48,
+    "total_phrases": 22,
+    "total_categories": 5,
     "last_updated": "2025-05-11"
   }
 }
