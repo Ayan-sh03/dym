@@ -1,0 +1,118 @@
+{
+  "keywords": {
+    "common_words": [
+      "weather",
+      "today",
+      "news",
+      "latest",
+      "sports",
+      "games",
+      "movies",
+      "watch",
+      "music",
+      "listen",
+      "technology",
+      "new",
+      "health",
+      "food",
+      "diet",
+      "recipe",
+      "travel",
+      "vacation",
+      "finance",
+      "money",
+      "books",
+      "read",
+      "shopping",
+      "buy"
+    ],
+    "misspellings": {
+      "weather": [
+        "wether",
+        "wheather",
+        "whether",
+        "wethar"
+      ],
+      "technology": [
+        "technolgy",
+        "tecnology",
+        "technoligy"
+      ],
+      "health": [
+        "helth",
+        "healt",
+        "healht"
+      ],
+      "recipe": [
+        "recipie",
+        "recepie",
+        "receipe"
+      ],
+      "vacation": [
+        "vacatin",
+        "vaccation",
+        "vacasion"
+      ],
+      "finance": [
+        "finanse",
+        "finence",
+        "finace"
+      ],
+      "shopping": [
+        "shoping",
+        "shooping",
+        "shapping"
+      ]
+    },
+    "phrases": [
+      "how to",
+      "what is",
+      "where to",
+      "when will",
+      "best way to",
+      "how can I",
+      "why does",
+      "top 10",
+      "near me",
+      "how do I"
+    ],
+    "categories": {
+      "tech": [
+        "computer",
+        "laptop",
+        "phone",
+        "software",
+        "app",
+        "website"
+      ],
+      "food": [
+        "restaurant",
+        "recipe",
+        "cooking",
+        "menu",
+        "delivery"
+      ],
+      "travel": [
+        "hotel",
+        "flight",
+        "booking",
+        "destination",
+        "tour"
+      ],
+      "education": [
+        "course",
+        "tutorial",
+        "learning",
+        "study",
+        "exam"
+      ]
+    }
+  },
+  "metadata": {
+    "total_keywords": 24,
+    "total_misspellings": 19,
+    "total_phrases": 10,
+    "total_categories": 4,
+    "last_updated": "2025-05-11"
+  }
+}
