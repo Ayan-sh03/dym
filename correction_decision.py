@@ -123,12 +123,15 @@ class CorrectionDecisionMaker:
             reason=reason
         )
 
-def format_suggestion(decision: CorrectionDecision, original_query: str) -> str:
-    """Format the 'Did you mean' suggestion message."""
-    if not decision.should_suggest or not decision.suggestion:
+def format_suggestion(result, original_query: str) -> str:
+    """
+    Format the 'Did you mean' suggestion message.
+    Works with either CorrectionDecision or SpellCorrectionResult.
+    """
+    if not result.should_suggest or not result.correction:
         return ""
 
-    return f'Did you mean "{decision.suggestion}" instead of "{original_query}"?'
+    return f'Did you mean "{result.correction}" instead of "{original_query}"?'
 
 
 # Example usage

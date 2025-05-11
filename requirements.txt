@@ -1,0 +1,22 @@
+# Core dependencies
+numpy>=1.26.0
+python-Levenshtein>=0.27.0
+jellyfish>=1.0.0
+
+# Type hints support
+typing-extensions>=4.0.0
+
+# Optional: For future REST API implementation
+# fastapi>=0.100.0
+# uvicorn>=0.20.0
+
+# Optional: For future logging enhancements
+# python-json-logger>=2.0.0
+
+# Development dependencies
+# pytest>=7.0.0
+# black>=22.0.0
+# mypy>=1.0.0
+
+# Version constraints
+# Requires Python >= 3.9

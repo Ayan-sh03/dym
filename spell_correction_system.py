@@ -76,7 +76,7 @@ class SpellCorrectionSystem:
             return ""
 
         return format_suggestion(
-            decision=result,
+            result=result,
             original_query=result.original_query
         )
 
