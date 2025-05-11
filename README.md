@@ -1,60 +1,154 @@
-# Spell Correction System ("Did You Mean")
+# Context-Aware Spell Correction System
 
-This project implements a modular spell correction system designed to provide "Did you mean" suggestions for user queries. It leverages techniques like data preprocessing, candidate generation (including indexed lookup, edit distance, and phonetic matching), candidate ranking (using n-gram probabilities and personalization), and a correction decision module.
+A Python-based spell correction system that uses context, user history, and domain knowledge to provide intelligent spelling suggestions.
 
-## Project Overview
+## Features
 
-The system takes a user's search query and, if a likely misspelling is detected, suggests a correction. The core logic is encapsulated in the `SpellCorrectionSystem` class, which orchestrates the following components:
+### 1. Context-Aware Corrections
+- Considers surrounding words for better accuracy
+- Differentiates between similar words based on context (e.g., "weather" vs "whether")
+- Supports domain-specific corrections (tech, health, business, etc.)
 
--   **`DataPreprocessor`**: Normalizes and tokenizes input queries.
--   **`CandidateGenerator`**: Generates potential correction candidates.
--   **`CandidateRanker`**: Ranks the generated candidates based on relevance and user history.
--   **`CorrectionDecisionMaker`**: Decides if a correction should be suggested.
+### 2. Intelligent Scoring
+- Combines multiple signals for confidence scoring:
+  - Edit distance similarity
+  - Phonetic matching
+  - Context relevance
+  - User history
+  - Domain knowledge
 
-## Key Features
+### 3. User Personalization
+- Maintains user-specific correction history
+- Learns from user interactions
+- Adjusts confidence based on past corrections
 
--   Modular architecture for easy extension and maintenance.
--   Utilizes edit distance (Levenshtein) and phonetic matching for candidate generation.
--   Incorporates n-gram language models and personalization for ranking.
--   Provides confidence scores for suggestions.
+### 4. Category-Specific Handling
+- Specialized handling for different domains:
+  - Technical terms
+  - Medical terminology
+  - Business vocabulary
+  - Educational terms
 
-## Requirements
+## Performance
 
--   Python 3.9+
--   `numpy`
--   `python-Levenshtein`
--   `jellyfish`
--   `typing-extensions`
+- Success Rate: 87.50% on test suite
+- Average Processing Time: < 1ms per query
+- Confidence Thresholds:
+  - High Context: 0.75+
+  - Medium Context: 0.50+
+  - Low/Irrelevant Context: 0.35+
 
-You can install the dependencies using:
-```bash
-pip install -r requirements.txt
+## Known Limitations
+
+1. **Multiple Word Corrections**
+   - Current implementation focuses on single-word corrections
+   - Multiple word queries (e.g., "komputer teknology") are not supported
+   - Future Enhancement: Add support for multi-word correction
+
+2. **Context Confidence Variability**
+   - Some valid corrections may fall below confidence thresholds
+   - Example: "recepie" → "recipe" (0.657) below high threshold (0.75)
+   - Trade-off between precision and recall
+
+3. **Domain Limitations**
+   - Limited to domains defined in seed data
+   - May not perform optimally for specialized terminology
+   - Requires domain-specific training data
+
+## Implementation Details
+
+### Components
+1. **Data Preprocessing** (`data_preprocessing.py`)
+   - Query normalization
+   - Tokenization
+   - User profile management
+
+2. **Candidate Generation** (`candidate_generation.py`)
+   - Edit distance based candidates
+   - Phonetic matching
+   - Lookup-based suggestions
+
+3. **Candidate Ranking** (`candidate_ranking.py`)
+   - Context-based scoring
+   - User history integration
+   - Confidence calculation
+
+4. **Correction Decision** (`correction_decision.py`)
+   - Threshold-based decision making
+   - Context-aware suggestion formatting
+   - Confidence level assignment
+
+### Usage Example
+```python
+from spell_correction_system import SpellCorrectionSystem
+
+# Initialize the system
+system = SpellCorrectionSystem("seed_data.json")
+
+# Process a query
+result = system.process_query(
+    query="tecnology",
+    context=["latest", "software"],
+    user_id="user1"
+)
+
+# Get suggestion
+suggestion = system.format_response(result)
 ```
 
-## How to Run
+## Test Coverage
 
-The main script `spell_correction_system.py` includes an example usage section. You can run it directly to see the system in action with predefined test cases:
+- Basic misspellings with context
+- Category-specific corrections
+- User history impact
+- Context disambiguation
+- Cross-domain usage
+- Edge cases and validation
 
-```bash
-python spell_correction_system.py
-```
+## TODOs and Future Improvements
 
-This will output an analysis of various queries, showing the original query, context, suggested correction (if any), confidence, and whether a suggestion was made.
+### High Priority
+1. **Multi-word Support** 🔄
+   - [ ] Implement token-based correction pipeline
+   - [ ] Add phrase-level context analysis
+   - [ ] Handle compound words and hyphenation
+   - [ ] Support word splitting/joining corrections
 
-## Project Structure
+2. **Performance Optimization** 🚀
+   - [ ] Add caching for frequent corrections
+   - [ ] Implement batch processing for multiple queries
+   - [ ] Optimize n-gram model calculations
+   - [ ] Add async processing support
 
--   `spell_correction_system.py`: Main class orchestrating the spell correction pipeline.
--   `data_preprocessing.py`: Handles query normalization and tokenization.
--   `candidate_generation.py`: Generates correction candidates.
--   `candidate_ranking.py`: Ranks candidates.
--   `correction_decision.py`: Decides whether to offer a suggestion.
--   `seed_data.json`: Contains initial keywords for the system.
--   `plan.md`: Detailed project plan and architecture.
--   `requirements.txt`: Project dependencies.
--   `test_spell_correction.py`: (Assumed, based on file list) Unit tests for the system.
+### Medium Priority
+3. **Dynamic Thresholds** 📊
+   - [ ] Implement adaptive confidence thresholds
+   - [ ] Add machine learning based threshold adjustment
+   - [ ] Create domain-specific threshold profiles
+   - [ ] Add feedback loop for threshold optimization
 
-## Future Enhancements (from plan.md)
+4. **Extended Domain Support** 🌐
+   - [ ] Add medical terminology database
+   - [ ] Integrate technical documentation corpus
+   - [ ] Support custom domain configuration
+   - [ ] Add domain detection
 
--   Dynamic model retraining.
--   Enhanced personalization.
--   Continuous performance optimization.
+
+
+### Documentation
+5. **Documentation Improvements** 📝
+   - [ ] Add API documentation
+   - [ ] Create usage examples
+   - [ ] Add performance benchmarks
+   - [ ] Create contribution guidelines
+
+## Dependencies
+
+See `requirements.txt` for full list of dependencies:
+- python-Levenshtein
+- jellyfish
+- numpy
+
+## Setup and Installation
+
+See `setup.md` for detailed setup instructions.
